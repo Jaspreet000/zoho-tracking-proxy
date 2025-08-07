@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Ping Render server
-        run: curl -s https://your-proxy.onrender.com/ping || echo "Ping failed"
+        run: curl -s https://zoho-tracking-proxy.onrender.com/ping || echo "Ping failed"
