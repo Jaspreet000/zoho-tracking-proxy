@@ -27,8 +27,10 @@ app.post('/track-order', async (req, res) => {
 
   try {
     const response = await axios.post(`${WEBHOOK_URL}?zapikey=${ZAPI_KEY}&isdebug=false`, {
-      order_input,
+      order_input
     });
+
+    console.log('Zoho Flow Response:', response.data); // <-- Add this
 
     res.json(response.data);
   } catch (err) {
@@ -36,6 +38,7 @@ app.post('/track-order', async (req, res) => {
     res.status(500).json({ status: 'error', message: 'Internal server error' });
   }
 });
+
 
 // Health check endpoint
 app.get('/', (req, res) => {
